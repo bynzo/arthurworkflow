@@ -1,0 +1,16 @@
+{
+  "name": "arthurworkflow",
+  "version": "0.1.0",
+  "description": "Harness-engineered OpenCode wrapper with Queen/Swarm orchestration, deterministic sensors, and self-improving agents.",
+  "type": "module",
+  "bin": { "arthurworkflow": "./bin/cli.mjs" },
+  "files": ["bin/", "config/", "templates/", "README.md", "LICENSE"],
+  "dependencies": {
+    "commander": "^13.1.0",
+    "glob": "^11.0.0",
+    "ora": "^8.2.0",
+    "picocolors": "^1.1.0"
+  },
+  "engines": { "node": ">=20.0.0" },
+  "license": "MIT"
+}

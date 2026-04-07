@@ -1,0 +1,51 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  // ─── DEFAULT MODEL ─────────────────────────────────────
+  // Change this to whatever model you want as your primary.
+  "model": "anthropic/claude-sonnet-4-20250514",
+
+  // ─── AGENT MODEL ASSIGNMENTS ───────────────────────────
+  // Replace model IDs with YOUR available models.
+  //
+  // Tier 1 (Strategic): anthropic/claude-sonnet-4-5, openai/o3, google/gemini-2.5-pro
+  // Tier 2 (Balanced):  anthropic/claude-sonnet-4, google/gemini-2.0-flash, openai/gpt-4.1
+  // Tier 3 (Fast/Local): local.qwen3:32b, google/gemini-2.0-flash, openai/gpt-4.1-mini
+  //
+  // For Ollama local models: set LOCAL_ENDPOINT=http://localhost:11434/v1
+  // Then use: local.qwen3:32b or local.{model-name}
+
+  "agents": {
+    "queen":      { "model": "anthropic/claude-sonnet-4-20250514", "temperature": 0.2 },
+    "architect":  { "model": "anthropic/claude-sonnet-4-20250514", "temperature": 0.3 },
+    "scripter":   { "model": "google/gemini-2.0-flash",           "temperature": 0.5 },
+    "sentinel":   { "model": "google/gemini-2.0-flash",           "temperature": 0.1 },
+    "documenter": { "model": "google/gemini-2.0-flash",           "temperature": 0.7 },
+    "refactor":   { "model": "google/gemini-2.0-flash",           "temperature": 0.4 }
+  },
+
+  // ─── PERMISSIONS ───────────────────────────────────────
+  "permission": {
+    "edit": "allow",
+    "write": "allow",
+    "bash": {
+      "*": "ask",
+      "npm test*": "allow",
+      "npm run*": "allow",
+      "npx*": "allow",
+      "git*": "allow",
+      "find*": "allow",
+      "cat*": "allow",
+      "ls*": "allow",
+      "grep*": "allow"
+    }
+  },
+
+  // ─── COMPACTION ────────────────────────────────────────
+  "compaction": { "enabled": true },
+
+  // ─── WATCHER ───────────────────────────────────────────
+  "watcher": {
+    "ignore": ["node_modules",".git",".arthur/sessions","dist","build",".next",".svelte-kit"]
+  }
+}

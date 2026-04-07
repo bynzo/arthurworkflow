@@ -1,0 +1,30 @@
+# Model Tiers — Failover Configuration
+#
+# Each tier lists models in priority order.
+# If model #1 fails (rate limit, quota, network), the agent falls back to #2, then #3.
+#
+# Format: provider/model-id
+# Run `opencode models` to see your available models.
+#
+# For Ollama local models:
+#   1. Start Ollama: ollama serve
+#   2. Set: export LOCAL_ENDPOINT=http://localhost:11434/v1
+#   3. Use: local.modelname (e.g. local.qwen3:32b)
+#
+# For OpenRouter (built-in failover):
+#   Use: openrouter/anthropic/claude-sonnet-4 etc.
+
+tier1_strategic:
+  - anthropic/claude-sonnet-4-20250514
+  - google/gemini-2.5-pro
+  - openai/o3
+
+tier2_balanced:
+  - google/gemini-2.0-flash
+  - anthropic/claude-sonnet-4-20250514
+  - openai/gpt-4.1
+
+tier3_fast:
+  - google/gemini-2.0-flash
+  - openai/gpt-4.1-mini
+  - local.qwen3:32b
