@@ -17,7 +17,7 @@
   // For Ollama local models: set LOCAL_ENDPOINT=http://localhost:11434/v1
   // Then use: local.qwen3:32b or local.{model-name}
 
-  "agents": {
+  "agent": {
     "queen":      { "model": "opencode/big-pickle",             "temperature": 0.2 },
     "architect":  { "model": "opencode/big-pickle",             "temperature": 0.3 },
     "scripter":   { "model": "opencode/minimax-m2.5-free",      "temperature": 0.5 },
