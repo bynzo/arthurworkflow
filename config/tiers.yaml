@@ -15,16 +15,16 @@
 #   Use: openrouter/anthropic/claude-sonnet-4 etc.
 
 tier1_strategic:
-  - anthropic/claude-sonnet-4-20250514
-  - google/gemini-2.5-pro
-  - openai/o3
+  - opencode/big-pickle             # queen, architect — strongest free model
+  - opencode/nemotron-3-super-free  # fallback if big-pickle is rate-limited
+  - opencode/minimax-m2.5-free      # last resort
 
 tier2_balanced:
-  - google/gemini-2.0-flash
-  - anthropic/claude-sonnet-4-20250514
-  - openai/gpt-4.1
+  - opencode/nemotron-3-super-free  # sentinel — review tasks
+  - opencode/minimax-m2.5-free      # fallback
+  - opencode/big-pickle             # escalation fallback
 
 tier3_fast:
-  - google/gemini-2.0-flash
-  - openai/gpt-4.1-mini
-  - local.qwen3:32b
+  - opencode/minimax-m2.5-free      # scripter, refactor — implementation
+  - opencode/qwen3.6-plus-free      # documenter — creative/docs
+  - opencode/big-pickle             # escalation fallback

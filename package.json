@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "Harness-engineered OpenCode wrapper with Queen/Swarm orchestration, deterministic sensors, and self-improving agents.",
   "type": "module",
+  "scripts": {
+    "test": "node bin/cli.mjs --version && echo 'CLI smoke test: OK'"
+  },
   "bin": { "arthurworkflow": "./bin/cli.mjs" },
   "files": ["bin/", "config/", "templates/", "README.md", "LICENSE"],
   "dependencies": {

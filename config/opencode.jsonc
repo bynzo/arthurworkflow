@@ -3,25 +3,27 @@
 
   // ─── DEFAULT MODEL ─────────────────────────────────────
   // Change this to whatever model you want as your primary.
-  "model": "anthropic/claude-sonnet-4-20250514",
+  "model": "opencode/big-pickle",
 
   // ─── AGENT MODEL ASSIGNMENTS ───────────────────────────
-  // Replace model IDs with YOUR available models.
+  // Free OpenCode models — no API key required.
+  // Run `opencode models` to see all available models.
   //
-  // Tier 1 (Strategic): anthropic/claude-sonnet-4-5, openai/o3, google/gemini-2.5-pro
-  // Tier 2 (Balanced):  anthropic/claude-sonnet-4, google/gemini-2.0-flash, openai/gpt-4.1
-  // Tier 3 (Fast/Local): local.qwen3:32b, google/gemini-2.0-flash, openai/gpt-4.1-mini
+  // Tier 1 (Strategic): opencode/big-pickle
+  // Tier 2 (Balanced):  opencode/nemotron-3-super-free, opencode/minimax-m2.5-free
+  // Tier 3 (Fast):      opencode/minimax-m2.5-free, opencode/qwen3.6-plus-free
   //
+  // To switch to paid models: replace with anthropic/claude-sonnet-4-5, etc.
   // For Ollama local models: set LOCAL_ENDPOINT=http://localhost:11434/v1
   // Then use: local.qwen3:32b or local.{model-name}
 
   "agents": {
-    "queen":      { "model": "anthropic/claude-sonnet-4-20250514", "temperature": 0.2 },
-    "architect":  { "model": "anthropic/claude-sonnet-4-20250514", "temperature": 0.3 },
-    "scripter":   { "model": "google/gemini-2.0-flash",           "temperature": 0.5 },
-    "sentinel":   { "model": "google/gemini-2.0-flash",           "temperature": 0.1 },
-    "documenter": { "model": "google/gemini-2.0-flash",           "temperature": 0.7 },
-    "refactor":   { "model": "google/gemini-2.0-flash",           "temperature": 0.4 }
+    "queen":      { "model": "opencode/big-pickle",             "temperature": 0.2 },
+    "architect":  { "model": "opencode/big-pickle",             "temperature": 0.3 },
+    "scripter":   { "model": "opencode/minimax-m2.5-free",      "temperature": 0.5 },
+    "sentinel":   { "model": "opencode/nemotron-3-super-free",  "temperature": 0.1 },
+    "documenter": { "model": "opencode/qwen3.6-plus-free",      "temperature": 0.7 },
+    "refactor":   { "model": "opencode/minimax-m2.5-free",      "temperature": 0.4 }
   },
 
   // ─── PERMISSIONS ───────────────────────────────────────
